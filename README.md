@@ -1,5 +1,5 @@
 # レシピ管理アプリ「おてて」
-![top image](./src/views/images/TopImage.png)
+![top image](./views/images/TopImage.png)
 # 1.アプリの概要
 #### レシピの管理、そのレシピの中から献立を決めれるWebアプリケーション
 です。
@@ -25,27 +25,23 @@
 ・MySQL 8.0.28<br>
 ・composer 2.2.7<br>
 
-### インフラ
-・Docker 20.10.12<br>
-・nginx 1.21.6<br>
-
 ### その他
 ・PHPMyAdmin<br>
 ・VSCode<br>
 
 # 3.ER図
-![top image](./src/views/images/er.png)
+![top image](./views/images/er.png)
 # 4.アプリの特徴
 ### ・ユーザーページで献立を表示
 その週や日数で設定した献立を分かりやすく一覧に表示し、調理したものは調理済みボタンで削除し、<br>
 見て何のレシピが残っているか確認できます。
 
-![app image](./src/views/images/userImage.png)
+![app image](./views/images/userImage.png)
 
 レシピ一覧では検索機能がついているので残った材料やタイトルを調べたり、
 写真も投稿できるので、食べたいものを選びやすくしました。
 
-![app image](./src/views/images/recipe.png)
+![app image](./views/images/recipe.png)
 
 # 5.アプリの機能一覧
 ### メイン機能
@@ -66,5 +62,4 @@
 ### 　・独習PHP 第3版
 ### 　・PHP本格入門　下
 ### 　・プロゲート
-### 　・[yutaro blog](https://yutaro-blog.net/2021/04/28/docker-laravel-vuejs-1/#index_id10 "yutaro blog")
 ### 　・Google
