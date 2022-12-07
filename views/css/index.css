@@ -1,0 +1,765 @@
+@charset "utf-8";
+
+/* --------- 共通 ----------- */
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.wrap {
+  padding: 0 2% 10px;
+  background-color: rgb(251, 223, 66);
+  text-align: center;
+  line-height: 30px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 100px;
+  margin: 0 15% 10px;
+  padding: 20px 0 40px;
+  text-align: center;
+  border: 1px solid black;
+  width: 70%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  padding: 30px 0 40px;
+}
+
+/* --------- header -------- */
+header {
+  background-color: rgb(251, 223, 66);
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 0 2%;
+}
+header a {
+  color: white;
+  font-weight: 700;
+}
+header a:hover {
+  color: black;
+}
+
+.left h1 {
+  font-size: 50px;
+  line-height: 65px;
+}
+
+.right ul {
+  display: flex;
+  justify-content: space-between;
+  line-height: 65px;
+}
+.right li {
+  padding-left: 20px;
+}
+
+/* ---------- footer ----------- */
+.footer {
+  background-color: rgb(251, 223, 66);
+  height: 70px;
+  padding-top: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+.footer p {
+  padding: 10px 10px 0 0;
+}
+
+.footer_menu ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer_menu li {
+  padding-right: 10px;
+}
+.footer_menu a:hover {
+  color: white;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+/* ----------- main ------------ */
+.main {
+  height: 530px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main_img {
+  position: relative;
+}
+.main_img img {
+  height: 500px;
+  width: 700px;
+}
+
+.img_back {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.main_content {
+  background-color: #fff;
+  border-radius: 100px;
+  border: 1px solid black;
+  height: 450px;
+  width: 400px;
+  text-align: center;
+  padding: 60px 0;
+}
+.main_content h2 {
+  font-size: 50px;
+}
+.main_content p {
+  font-size: 15px;
+  padding: 40px 0;
+  line-height: 25px;
+}
+.main_content .btn {
+  background-color: rgb(251, 223, 66);
+  padding: 20px 40px;
+  border: 2px solid black;
+}
+.main_content .btn:hover {
+  box-shadow: none;
+  background-color: rgb(249, 230, 111);
+  box-shadow: 0px 8px 5px -5px black;
+}
+.main_content .gest:hover {
+  border-bottom: 1px solid black;
+  padding-bottom: 2px;
+}
+
+/* ------------ about -------------- */
+.about_layout {
+  background-color: rgb(251, 223, 66);
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+
+}
+
+.about_container {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 0 40px;
+  padding: 20px 30px;
+  width: 70%;
+}
+
+.content p {
+  line-height: 25px;
+}
+.about_title h1 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.about_title_sub h2 {
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 45px;
+  text-align: center;
+}
+
+.about_img img{
+  width: 50px;
+  height: 45px;
+}
+
+.about_content {
+  border-bottom: 1px dashed lightgray;
+  padding: 20px 0;
+}
+.about_content h2 {
+  line-height: 45px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.about_icon {
+  width: 45px;
+  height: 45px;
+}
+
+#about_sample {
+  width: 180px;
+  height: 50px;
+}
+
+.about_page {
+  width: 80%;
+  height: 300px;
+}
+/* ------------- form -------------- */
+.layout {
+  background-color: rgb(251, 223, 66);
+  padding: 50px 0;
+}
+
+.card_header {
+  font-size: 35px;
+  text-align: center;
+  padding: 30px 0 15px;
+}
+
+.edit_container {
+  display: flex;
+  justify-content: center;
+}
+.err_msg {
+  display: inline-block;
+  text-align: left;
+  width: 50%;
+  border: 1px solid red;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 10px 0 10px 15px;
+  font-size: 13px;
+  color: red;
+}
+.err_msg li {
+  list-style: disc;
+}
+
+.err_msgs>li {
+  display: inline-block;
+  text-align: left;
+  width: 50%;
+  border: 1px solid red;
+  border-radius: 15px;
+  padding: 10px 0 10px 15px;
+  font-size: 13px;
+  color: red;
+}
+
+.form {
+  display: inline-block;
+  text-align: left;
+}
+
+.form_control {
+  margin: 4px 0 8px 0;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  width: 450px;
+}
+
+.image img{
+  width: 400px;
+  height: 400px;
+}
+
+input[type="file"] {
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="password_conf"],
+input[type="date"],
+textarea:focus {
+  outline: 0;
+}
+:focus {
+  outline: 0;
+}
+
+.btn_form {
+  display: flex;
+  justify-content: center;
+}
+.btn_form_edit {
+  display: flex;
+  justify-content: start;
+}
+.btn {
+  border: 2px solid black;
+    background-color: rgb(251, 223, 66);
+  margin: 15px 0;
+  padding: 15px 85px;
+}
+.btn:hover {
+  background-color: rgb(252, 228, 91);
+  box-shadow: 0px 8px 5px -5px rgba(0,0,0,1);
+}
+
+.cancel_btn {
+  display: block;
+  line-height: 48px;
+  border: 1px solid black;
+  margin: 15px 0 15px 10px;
+  padding: 5px 65px;
+  text-align: center;
+}
+.cancel_btn:hover {
+  background-color: rgb(239, 240, 240);
+  border: 2px solid black;
+  line-height: 47px;
+  padding: 5px 65px;
+}
+
+/* ------------- user_page ---------------- */
+
+.user {
+  display: flex;
+  justify-content: left;
+  padding: 20px 2%;
+}
+
+.user_prof {
+  text-align: center;
+  margin-right: 40px;
+}
+
+.nickname {
+  background-position: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user_name {
+  margin-bottom: 25px;
+}
+
+.user_icon {
+  width: 200px;
+  height: 200px;
+}
+.user_icon img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+  border-radius: 200px;
+}
+
+.user_menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  grid-template-rows: 60px 0;
+  padding: 0 2%;
+  text-align: center;
+  line-height: 60px;
+}
+
+.week_edit_del {
+  display: flex;
+  justify-content: start;
+}
+.week_edit_del h1 {
+  margin-top: 15px;
+}
+
+.cooking_edit_menu ul {
+  display: flex;
+  justify-content: start;
+}
+
+.recipes_item_week {
+  margin: 5px;
+  width: 240px;
+}
+
+.recipes_item_week p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.menu_btn {
+  border: 1px solid black;
+}
+.menu_btn:hover {
+  background-color: rgb(251, 223, 66);
+}
+
+.menu_btn img {
+  height: 50px;
+  width: 50px;
+  padding-bottom: 10px;
+}
+
+/* ------------ user_change --------- */
+.user_icon_position {
+  margin-left: 40%;
+}
+
+.message {
+  line-height: 30px;
+  font-size: 15px;
+  padding-left: 20%;
+}
+.message img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ----------- recipe_insert --------- */
+
+.mate_control,
+.gram_control {
+  border-bottom: 1px solid black;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.mate_control {
+  width: 250px;
+  margin-right: 10px;
+}
+.gram_control {
+  width: 190px;
+}
+
+#add {
+  background-color: rgb(251, 223, 66);
+  margin: 10px 0;
+  padding: 5px 8px;
+  border-radius: 50px;
+  color: white;
+}
+#add:hover {
+  color: black;
+  border: 2px solid black;
+  padding: 3px 6px;
+}
+
+textarea {
+  height: 120px;
+}
+
+.sub_content p {
+  white-space: pre-wrap;
+}
+
+/* ------------- search --------------- */
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.search_control {
+  margin: 2px 0 2px;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  width: 450px;
+}
+
+.search_btn {
+  border: 2px solid black;
+  background-color: rgb(251, 223, 66);
+  margin: 10px 0 10px 10px;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: center;
+}
+.search_btn:hover {
+  background-color: rgb(252, 228, 91);
+  box-shadow: 0px 8px 5px -5px rgba(0,0,0,1);
+}
+
+/* ---------- recipe_list ------------- */
+.form_recipe {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 30px 10%;
+  text-align: center;
+}
+.recipes_item {
+  padding: 20px;
+  width: 250px;
+}
+
+.recipe_title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-align: left;
+}
+
+.recipe_img {
+  text-align: center;
+}
+.recipe_img img {
+  width: 150px;
+  height: 150px;
+}
+
+.no_recipe {
+  display: inline-block;
+  margin: 10% 40%;
+  color: lightgray;
+  font-weight: bold;
+}
+.no_recipe img {
+  height: 100px;
+  width: 100px;
+  margin-left: 25%;
+}
+.no_recipe h1 {
+  margin: 10px 0 20px;
+}
+
+.recipe_btn {
+  border: 1px solid lightgray;
+  padding: 10px 40px;
+  margin-left: 20px;
+}
+.recipe_btn:hover {
+  background-color: lightgray;
+  color: white;
+  border: 1px solid lightgray;
+}
+
+/* -------------- cooking --------------- */
+.cooking_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.cooking_title {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 10px 0 0;
+}
+
+.cooking_edit_menu {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.edit {
+  color: orange;
+  border: 1px solid orange;
+  border-radius: 20px;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 17px;
+}
+.edit:hover {
+  background-color: orange;
+  color: white;
+}
+.trash {
+  color: blueviolet;
+  border: 1px solid blueviolet;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+}
+.trash:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+.cooking {
+  display: flex;
+  justify-content: center;
+  padding: 0 70px;
+}
+
+.cooking_left {
+  padding-right: 40px;
+}
+.cooking_left img {
+  width: 400px;
+  height: 400px;
+}
+
+.cooking_right {
+  width: 400px;
+  margin-top: 40px;
+}
+.cooking_right li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 8px;
+  font-size: 20px;
+  border-bottom: 1px solid lightgray;
+  line-height: 25px;
+}
+
+.cooking_contents {
+  margin: 0 15%;
+}
+.cooking_contents h1 {
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.sub_content {
+  border: 2px solid rgb(251, 223, 66);
+  border-radius: 20px;
+  line-height: 20px;
+  margin: 40px 0;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.contents {
+  margin: 20px 0;
+}
+.contents li {
+  line-height: 25px;
+  padding: 10px 5px;
+  border-bottom: 1px solid lightgray;
+  font-size: 18px;
+}
+
+/* -------------------- trash -------------------- */
+.trash_recipe {
+  background-color: white;
+  border: 3px black solid;
+  border-radius: 20px;
+  margin: 20px 50px;
+}
+
+.trash_title {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.trash_explanation {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.trash_exp_icon::before {
+  content: "\e304";
+  font-family: "Font Awesome 5 Free";
+  font-weight: solid;
+  color: black;
+  font-size: 20px;
+}
+
+.trash_btn {
+  border: 2px solid black;
+    background-color: rgb(244, 182, 50);
+  margin: 15px 0;
+  padding: 15px 85px;
+}
+.trash_btn:hover {
+  background-color: rgb(244, 201, 108);
+  box-shadow: 0px 8px 5px -5px rgba(0,0,0,1);
+}
+
+.trash_cancel_btn {
+  display: block;
+  background-color: white;
+  line-height: 48px;
+  border: 1px solid black;
+  margin: 15px 0 15px 10px;
+  padding: 5px 65px;
+  text-align: center;
+}
+.trash_cancel_btn:hover {
+  background-color: rgb(239, 240, 240);
+}
+
+.trash_img {
+  width: 300px;
+  height: 250px;
+  margin: 20px 0 0 38%;
+  color: lightgray;
+}
+
+/* --------------------- week -------------------- */
+.week {
+  display: flex;
+  justify-content: start;
+  border-bottom: 1px solid black;
+  margin: 0 8%;
+}
+
+.week_control {
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+.form_week {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: 30px 50px;
+}
+
+.week_title {
+  display: inline-block;
+  text-align: left;
+}
+
+.week_btn {
+  border: 1px solid lightgray;
+  padding: 10px 20px;
+  margin-left: 20px;
+}
+.week_btn:hover {
+  background-color: lightgray;
+  color: white;
+  border: 1px solid lightgray;
+}
+
+ /* ---------------- terms of use -------------- */
+ .terms_container {
+  background-color: white;
+  border-radius: 100px;
+  margin: 0 15% 10px;
+  padding: 20px 20px 40px;
+  border: 1px solid black;
+  width: 70%;
+}
+.terms_container h1 {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+.terms_container p, table {
+  font-size: 12px;
+}
+.terms_table {
+  margin: 10px 0;
+}
+.terms_table tr {
+  border: 1px solid black;
+}
+.terms_table td {
+  border-right: 1px solid black;
+  padding: 4px;
+  width: 40%;
+}
+.privacy {
+  text-align: right;
+}
+
+/* -------------- withdrawal ----------- */
+.with_btn {
+  display: flex;
+  justify-content: center;
+}
