@@ -87,19 +87,6 @@ if (isset($_POST['mates_in']) && isset($_POST['grams_in']) || isset($_POST['sub_
   $con_in = $_POST['con_in'];
 }
 
-if (!empty($_FILES['image_in']['tmp_name']))
-{
-  $name = $_FILES['image_in']['name'];
-  $type = $_FILES['image_in']['type'];
-  $content_img = file_get_contents($_FILES['image_in']['tmp_name']);
-  $size = $_FILES['image_in']['size'];
-
-  // 画像を一時的にセッションに保存し、表示する。
-  $_SESSION['image_in']['content'] = $content_img;
-  $_SESSION['image_in']['name'] = $name;
-
-}
-
 // 登録処理
 if (!empty($mate_in) && !empty($con_in) || !empty($sub_in))
 {
@@ -108,8 +95,4 @@ if (!empty($mate_in) && !empty($con_in) || !empty($sub_in))
   $r->createSubContent($_GET['recipe_id'], $sub_in, $_SESSION['id']);
 }
 
-if (!empty($_FILES['image_in']['tmp_name']))
-{
-  $r->createImage($name, $type, $content_img, $size, $title, $_SESSION['id']);
-}
 header('Location: /views/cooking.php?recipe_id='.$_GET['recipe_id']);

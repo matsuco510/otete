@@ -49,10 +49,11 @@ $_SESSION['token'] = $token;
       <h1 class="card_header">プロフィール変更</h1>
       <form action="../backend/user/Edit.php" method="post" enctype="multipart/form-data" class="form">
         <input type="hidden" name="token" value="<? print $token; ?>">
-        <label for="image">アイコンを変更</label>
+        <label for="image">アイコンを変更</label><br>
         <div class="user_icon user_icon_position">
         <? $u->show($_SESSION['id']); ?>
         </div>
+        <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
         <input type="file" name="image" enctype="multipart/form-data"><br>
         <label for="nickname">ニックネーム</label><br>
         <input type="text" name="nickname" class="form_control" value="<? print $_SESSION['nickname']?>"><br>

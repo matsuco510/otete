@@ -57,8 +57,8 @@ if (!empty($_SESSION['image']['content']))
       <form action="../backend/recipe/Create.php" method="post" enctype="multipart/form-data" id="menu" class="form">
         <input type="hidden" name="token" value="<? print $token; ?>">
         <label for="image">料理の写真</label><br>
-        <input type="hidden" name="max_file_size" value="1000000">
-        <input type="file" name="image" accept="image/*" value='' multiple><br>
+        <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+        <input type="file" name="image" enctype="multipart/form-data"><br>
         <label for="title">タイトル</label><br>
         <input type="text" name="title" class="form_control"><br>
         <table>

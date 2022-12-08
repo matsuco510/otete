@@ -44,21 +44,15 @@ class ImageModel
   public function create($name, $type, $content, $size, $id, $user_id)
   {
     try {
-      $sql = 'INSERT INTO recipe_image(recipe_id, name, type, content, size, user_id, created_at) VALUES(:recipe_id, :name, :type, :content, :size, user_id, now())';
+      $sql = 'INSERT INTO recipe_image(recipe_id, name, type, content, size, user_id, created_at) VALUES(:recipe_id, :name, :type, :content, :size, :user_id, now())';
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':recipe_id', $id, \PDO::PARAM_INT);
       $stmt->bindValue(':name', $name, \PDO::PARAM_STR);
       $stmt->bindValue(':type', $type, \PDO::PARAM_STR);
       $stmt->bindValue(':content', $content, \PDO::PARAM_LOB);
       $stmt->bindValue(':size', $size, \PDO::PARAM_INT);
-      $stmt->bindValue(':user_id', $user_id);
+      $stmt->bindValue(':user_id', $user_id, \PDO::PARAM_STR);
       $stmt->execute();
-
-      // recipe_imageテーブルに登録できたら、recipeテーブルにrecipe_image_idを更新する。
-      $sql = 'UPDATE recipe SET recipe_img_id = (SELECT recipe_img_id FROM recipe_image WHERE recipe_id = :recipe_id) WHERE recipe_id = :recipe_id';
-      $stt = $this->pdo->prepare($sql);
-      $stt->bindValue(':recipe_id', $id, \PDO::PARAM_INT);
-      $stt->execute();
 
     } catch(PDOException $e) {
       $e->getMessage();

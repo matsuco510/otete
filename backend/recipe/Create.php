@@ -123,7 +123,8 @@ if (!empty($title) && !empty($mate_all) && !empty($contents) || !empty($sub_cont
         }
         ?>
         </div>
-        <input type="file" name="image" accept="image/*" multipart><br>
+        <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+        <input type="file" name="image" enctype="multipart/form-data"><br>
         <label for="title" style="font-weight: 600;">タイトル</label><br>
         <?
           if (!empty($title))

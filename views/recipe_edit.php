@@ -57,13 +57,13 @@ $recipes = $r->show($_GET['recipe_id']);
           <? if ($recipes['content_img'] === '')
           {
             print '<img src="./images/recipe_no_image.png">'; ?><br>
-            <input type="file" name="image_in" enctype="multipart/form-data"><br>
       <? } else {
             $img = base64_encode($recipes['content_img']);
             print '<img src="data:'.$recipes['name'].';base64,'.$img.'">'; ?><br>
-            <input type="file" name="image" enctype="multipart/form-data"><br>
       <? } ?>
           </div>
+          <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+          <input type="file" name="image" enctype="multipart/form-data"><br>
           <label for="title">タイトル</label><br>
           <input type="text" name="title" value="<? print $recipes['title']; ?>" class="form_control">
           <table>

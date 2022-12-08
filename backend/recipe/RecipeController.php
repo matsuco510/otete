@@ -248,15 +248,6 @@ class RecipeController
     }
   }
 
-  public function createImage($name, $type, $content, $size, $title, $user_id)
-  {
-    $id = $this->modelFactory->createTitleModel()->find($title, $user_id);
-    if (!empty($id['recipe_id']))
-    {
-      $this->modelFactory->createImageModel()->create($name, $type, $content, $size, $id['recipe_id'], $user_id);
-    }
-  }
-
   public function createWeek($before, $after, $recipes, $user_id)
   {
     foreach ($recipes as $id)
@@ -325,10 +316,9 @@ class RecipeController
     $images = $this->modelFactory->createImageModel()->find($id);
     if (!empty($images['recipe_id']))
     {
-      foreach ($images as $image)
-      {
-          $this->modelFactory->createImageModel()->edit($name, $type, $content, $size, $id, $user_id);
-      }
+      $this->modelFactory->createImageModel()->edit($name, $type, $content, $size, $id, $user_id);
+    } else {
+      $this->modelFactory->createImageModel()->create($name, $type, $content, $size, $id, $user_id);
     }
   }
 
