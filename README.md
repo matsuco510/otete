@@ -22,7 +22,7 @@
 
 ### バックエンド
 ・PHP 8.1.11<br>
-・MySQL 8.0.28<br>
+・MySQL 5.7.34<br>
 ・composer 2.2.7<br>
 
 ### その他
