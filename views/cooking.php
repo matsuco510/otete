@@ -28,6 +28,8 @@ $recipes = $r->show($_GET['recipe_id']);
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/6f9f6b33ef.js" crossorigin="anonymous"></script>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./images/favicon.png">
   </head>
   <body>
     <header>

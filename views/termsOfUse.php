@@ -10,7 +10,8 @@
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-  
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./images/favicon.png">
 </head>
 <body>
   <header>

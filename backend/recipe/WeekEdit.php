@@ -58,6 +58,8 @@ if (!empty($before) && !empty($after) || !empty($recipes_in) || !empty($week_del
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="/views/images/favicon.png">
 </head>
 <body>
   <header>
