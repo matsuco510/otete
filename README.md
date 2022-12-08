@@ -26,7 +26,7 @@
 ・composer 2.2.7<br>
 
 ### その他
-・PHPMyAdmin<br>
+・MAMP<br>
 ・VSCode<br>
 
 # 3.ER図
