@@ -12,6 +12,7 @@ session_start();
   <!-- css -->
   <link rel="stylesheet" href="./css/destyle.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -39,7 +40,7 @@ session_start();
         <input type="submit" name="logout" value="ログアウト" class="btn">
       </form>
       <h1 class="card_header">OR</h1><br>
-      <h1 style="font-size: 40px; padding-bottom: 20px;">退会する</h1>
+      <h1 class="drawal_mobile">退会する</h1>
       <form action="../backend/user/WithDrawal.php" method="post" class="form">
         <p>退会すると、今までのユーザーが登録したデータが全て削除されます<br>
         が、よろしいでしょうか？</p>

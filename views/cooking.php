@@ -24,6 +24,7 @@ $recipes = $r->show($_GET['recipe_id']);
     <!-- css -->
     <link rel="stylesheet" href="./css/destyle.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mobile.css">
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <!-- font awesome -->
@@ -67,6 +68,7 @@ $recipes = $r->show($_GET['recipe_id']);
   ?>
       </div>
       <div class="cooking_right">
+        <h1 class="cooking_right_mobile">材料</h1>
         <ul>
           <? 
           $mate_count = count($recipes['mate']);

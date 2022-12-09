@@ -54,6 +54,7 @@ if (!empty($before) && !empty($after) || !empty($recipes_in) || !empty($week_del
   <!-- css -->
   <link rel="stylesheet" href="/views/css/destyle.css">
   <link rel="stylesheet" href="/views/css/index.css">
+  <link rel="stylesheet" href="/views/css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <!-- font awesome -->

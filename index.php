@@ -18,6 +18,7 @@ $u = new UserController();
   <!-- css -->
   <link rel="stylesheet" href="./views/css/destyle.css">
   <link rel="stylesheet" href="./views/css/index.css">
+  <link rel="stylesheet" href="./views/css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -54,7 +55,7 @@ $u = new UserController();
           選んで作れる。<br>
         </p>
         <a href="./views/register.php" class="btn">さあ、はじめよう。</a><br>
-        <br>
+        <br class="mobile_br">
         <a href="./backend/user/GestLogin.php" class="gest">ゲストログイン</a>
       </div>
     </div><!--  main  -->

@@ -19,6 +19,7 @@ $_SESSION['token'] = $token;
   <!-- css -->
   <link rel="stylesheet" href="./css/destyle.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">

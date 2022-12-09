@@ -72,6 +72,7 @@ if (isset($content)|| isset($nickname) || isset($mail) || !empty($password) || !
   <!-- css -->
   <link rel="stylesheet" href="/views/css/destyle.css">
   <link rel="stylesheet" href="/views/css/index.css">
+  <link rel="stylesheet" href="/views/css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">

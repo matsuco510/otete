@@ -25,6 +25,7 @@ $recipes = $r->showUser($_SESSION['id']);
     <!-- css -->
     <link rel="stylesheet" href="./css/destyle.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mobile.css">
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <!-- font awesome -->

@@ -27,6 +27,7 @@ $recipes = $r->showUser($_SESSION['id']);
   <!-- css -->
   <link rel="stylesheet" href="./css/destyle.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <!-- font awesome -->
@@ -51,7 +52,7 @@ $recipes = $r->showUser($_SESSION['id']);
     <div class="container">
       <h1 class="card_header">週数とレシピを決める</h1>
       <div class="edit_container">
-      <form action="../backend/recipe/Week.php" method="post">
+      <form action="../backend/recipe/Week.php" method="post" class="form_mobile">
         <label for="week" class="week_title">週数を設定</label>
         <div class="week">
           <input type="date" name="before" class="week_control">

@@ -30,6 +30,7 @@ $weeks = $r->showWeek($_SESSION['id']);
     <!-- css -->
     <link rel="stylesheet" href="./css/destyle.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mobile.css">
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <!-- font awesome -->
@@ -51,21 +52,37 @@ $weeks = $r->showWeek($_SESSION['id']);
       </div>
     </header><!-- header -->
     <div class="user">
-      <div class="user_prof">
-        <ul>
-          <li class="nickname">
-            <div class="user_name">
+      <div id="user_mobile">
+        <div class="user_prof">
+          <ul>
+            <li class="nickname">
+              <div class="user_name">
+                <?
+                print $_SESSION['nickname'];
+                ?>
+              </div>
+            </li>
+            <li class="user_icon">
               <?
-              print $_SESSION['nickname'];
+              $u->show($_SESSION['id']);
               ?>
-            </div>
-          </li>
-          <li class="user_icon">
-            <?
-            $u->show($_SESSION['id']);
-            ?>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="mobile_user_menu">
+          <a href="./user_edit.php" class="menu_btn">
+            <img src="./images/avocado.png" alt="avocado"> プロフィール変更
+          </a>
+          <a href="/views/recipe.php" class="menu_btn">
+            <img src="./images/strawberry.png" alt="strawberry"> メニュー一覧
+          </a>
+          <a href="./recipe_insert.php" class="menu_btn">
+            <img src="./images/milk.png" alt="milk"> 料理の追加
+          </a>
+          <a href="./week.php"  class="menu_btn">
+            <img src="./images/human.png" alt="human"> 週数の設定
+          </a>
+        </div>
       </div>
       <div class="week_menu">
         <div class="week_edit_del">

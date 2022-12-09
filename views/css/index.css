@@ -217,10 +217,6 @@ header a:hover {
   padding: 30px 0 15px;
 }
 
-.edit_container {
-  display: flex;
-  justify-content: center;
-}
 .err_msg {
   display: inline-block;
   text-align: left;
@@ -316,6 +312,14 @@ textarea:focus {
   padding: 5px 65px;
 }
 
+.image_attention {
+  font-size: 14px;
+  color: red;
+}
+
+.drawal_mobile {
+  font-size: 40px;
+}
 /* ------------- user_page ---------------- */
 
 .user {
@@ -349,6 +353,12 @@ textarea:focus {
   height: 100%;
   margin-bottom: 30px;
   border-radius: 200px;
+}
+
+@media screen and (min-width: 790px) {
+  .mobile_user_menu {
+    display: none;
+  }
 }
 
 .user_menu {
@@ -401,7 +411,7 @@ textarea:focus {
 
 /* ------------ user_change --------- */
 .user_icon_position {
-  margin-left: 40%;
+  margin-left: 20%;
 }
 
 .message {
@@ -607,6 +617,12 @@ textarea {
   border-bottom: 1px solid lightgray;
   line-height: 25px;
 }
+@media screen and (min-width: 790px)
+{
+  .cooking_right_mobile {
+    display: none;
+  }
+}
 
 .cooking_contents {
   margin: 0 15%;
@@ -712,11 +728,6 @@ textarea {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 30px 50px;
-}
-
-.week_title {
-  display: inline-block;
-  text-align: left;
 }
 
 .week_btn {

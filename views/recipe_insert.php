@@ -32,6 +32,7 @@ if (!empty($_SESSION['image']['content']))
   <!-- css -->
   <link rel="stylesheet" href="./css/destyle.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -57,7 +58,7 @@ if (!empty($_SESSION['image']['content']))
       <form action="../backend/recipe/Create.php" method="post" enctype="multipart/form-data" id="menu" class="form">
         <input type="hidden" name="token" value="<? print $token; ?>">
         <label for="image">料理の写真</label><br>
-        <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+        <label for="file" class="image_attention">4MB以内の画像を登録してください。</label><br>
         <input type="file" name="image" enctype="multipart/form-data"><br>
         <label for="title">タイトル</label><br>
         <input type="text" name="title" class="form_control"><br>

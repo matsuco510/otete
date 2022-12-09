@@ -26,6 +26,7 @@ $recipes = $r->show($_GET['recipe_id']);
     <!-- css -->
     <link rel="stylesheet" href="./css/destyle.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/mobile.css">
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
     <!-- font awesome -->
@@ -62,7 +63,7 @@ $recipes = $r->show($_GET['recipe_id']);
             print '<img src="data:'.$recipes['name'].';base64,'.$img.'">'; ?><br>
       <? } ?>
           </div>
-          <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+          <label for="file" class="image_attention">4MB以内の画像を登録してください。</label><br>
           <input type="file" name="image" enctype="multipart/form-data"><br>
           <label for="title">タイトル</label><br>
           <input type="text" name="title" value="<? print $recipes['title']; ?>" class="form_control">

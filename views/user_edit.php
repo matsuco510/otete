@@ -25,6 +25,7 @@ $_SESSION['token'] = $token;
   <!-- css -->
   <link rel="stylesheet" href="./css/destyle.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
@@ -52,8 +53,8 @@ $_SESSION['token'] = $token;
         <label for="image">アイコンを変更</label><br>
         <div class="user_icon user_icon_position">
         <? $u->show($_SESSION['id']); ?>
-        </div>
-        <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+        </div><br>
+        <label for="file" class="image_attention">4MB以内の画像を登録してください。</label><br>
         <input type="file" name="image" enctype="multipart/form-data"><br>
         <label for="nickname">ニックネーム</label><br>
         <input type="text" name="nickname" class="form_control" value="<? print $_SESSION['nickname']?>"><br>

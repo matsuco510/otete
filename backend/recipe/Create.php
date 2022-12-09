@@ -82,6 +82,7 @@ if (!empty($title) && !empty($mate_all) && !empty($contents) || !empty($sub_cont
   <!-- css -->
   <link rel="stylesheet" href="/views/css/destyle.css">
   <link rel="stylesheet" href="/views/css/index.css">
+  <link rel="stylesheet" href="/views/css/mobile.css">
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
   <!-- font awesome -->
@@ -123,7 +124,7 @@ if (!empty($title) && !empty($mate_all) && !empty($contents) || !empty($sub_cont
         }
         ?>
         </div>
-        <label for="file" style="font-size: 14px; color: red;">4MB以内の画像を登録してください。</label><br>
+        <label for="file" class="image_attention">4MB以内の画像を登録してください。</label><br>
         <input type="file" name="image" enctype="multipart/form-data"><br>
         <label for="title" style="font-weight: 600;">タイトル</label><br>
         <?
