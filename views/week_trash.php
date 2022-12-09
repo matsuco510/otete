@@ -142,7 +142,7 @@ if (!empty($_POST['recipe']))
             </div>
            <? } ?>
           <div class="btn_form">
-            <input type="submit" name="delete" value="　O K　" class="btn">
+            <input type="submit" name="delete" value="O K" class="btn">
             <button type="submit" name="cancel" class="cancel_btn">キャンセル</button>
           </div>
         </div>
