@@ -151,7 +151,7 @@ $recipes = $r->show($_GET['recipe_id']);
           <? } ?>
           <input type="text" name="con_in[]" class="form_control"><br>
           <input type="text" name="con_in[]" class="form_control"><br>
-          <div class="btn_form_edit">
+          <div class="btn_form">
             <input type="submit" name="edit_btn" value="変　更" class="btn">
             <button type="submit" name="cancel" class="cancel_btn">キャンセル</button>
           </div>
