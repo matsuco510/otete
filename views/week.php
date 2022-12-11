@@ -14,7 +14,6 @@ if (!isset($_SESSION['id']))
   header("Location: login.php");
 }
 
-
 $r = new RecipeController();
 $recipes = $r->showUser($_SESSION['id']);
 ?>

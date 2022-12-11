@@ -35,7 +35,7 @@ $recipes = $r->show($_GET['recipe_id']);
   <body>
     <header>
       <div class="left">
-        <h1><a href="./index.php">Otete</a></h1>
+        <h1><a href="../index.php">Otete</a></h1>
       </div>
       <div class="right">
         <ul>

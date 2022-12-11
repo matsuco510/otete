@@ -17,13 +17,6 @@ if (!isset($_SESSION['id']))
   header("Location: /views/login.php");
 }
 
-if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] != $_POST['token'])
-{
-  die('不正なリクエストです。処理を中断します...');
-}
-
-unset($_SESSION['token']);
-
 if (empty($_POST['before']) || empty($_POST['after']) || empty($_POST['recipe']))
 {
   $v = new Validator();
