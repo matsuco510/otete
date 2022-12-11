@@ -69,7 +69,7 @@ $_SESSION['token'] = $token;
         <input type="submit" class="btn" value="変　更">
       </form>
     </div>
-  </div><!-- nickname_change_form -->
+  </div><!-- user change form -->
   <footer class="footer">
   <div class="footer_menu">
       <ul>

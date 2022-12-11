@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 410px) {
   .cooking_title h1 {
     font-size: 13px;
   }
@@ -9,9 +9,13 @@
     font-size: 5px;
   }
 
-  .mate_control,
-  .gram_control {
-    width: 130px;
+  .form {
+    width: 100%;
+  }
+
+  #mate,
+  #gram {
+    width: 90%;
   }
 }
 
@@ -262,25 +266,26 @@
 
   .mate_control,
   .gram_control {
-    width: 170px;
+    width: 90%;
     padding-top: 10px;
     font-size: 12px;
   }
   .mate_control {
-    margin-right: 10px;
+    margin-right: 5px;
   }
+
   .btn {
     height: 45px;
-    padding: 10px 40px;
+    padding: 10px 45px;
   }
 
   .cancel_btn {
     height: 45px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     line-height: 22px;
   }
   .cancel_btn:hover {
-    padding: 9px 49px;
+    padding: 9px 29px;
     line-height: 22px;
   }
 

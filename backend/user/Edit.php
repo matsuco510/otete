@@ -100,13 +100,28 @@ if (isset($content)|| isset($nickname) || isset($mail) || !empty($password) || !
       <div class="user_icon user_icon_position">
         <? $u->show($_SESSION['id']); ?>
       </div>
-      <form action="/backend/user/Edit.php" method="post" enctype="multipart/form-data" class="form">
-      <input type="hidden" name="max_file_size" value="1000000">
-        <input type="file" name="image">
-        <input type="submit" class="btn">
+      <form action="../backend/user/Edit.php" method="post" enctype="multipart/form-data" class="form">
+        <input type="hidden" name="token" value="<? print $token; ?>">
+        <label for="image">アイコンを変更</label><br>
+        <div class="user_icon user_icon_position">
+        <? $u->show($_SESSION['id']); ?>
+        </div><br>
+        <label for="file" class="image_attention">4MB以内の画像を登録してください。</label><br>
+        <input type="file" name="image" enctype="multipart/form-data"><br>
+        <label for="nickname">ニックネーム</label><br>
+        <input type="text" name="nickname" class="form_control" value="<? print $_SESSION['nickname']?>"><br>
+        <label for="mail">メールアドレス</label><br>
+        <input type="text" name="email" class="form_control" value="<? print $_SESSION['mail']; ?>"><br>
+        <label for="password">元のパスワード</label><br>
+        <input type="text" name="password" class="form_control"><br>
+        <label for="new_password">新しいパスワード</label><br>
+        <input type="text" name="new_password" class="form_control"><br>
+        <label for="new_password_conf">新しいパスワード(確認)</label><br>
+        <input type="text" name="new_password_conf" class="form_control"><br>
+        <input type="submit" class="btn" value="変　更">
       </form>
     </div>
-  </div><!-- nickname_change_form -->
+  </div><!-- user change form -->
   <footer class="footer">
   <div class="footer_menu">
       <ul>
