@@ -16,9 +16,10 @@ class RecipeController
     $this->modelFactory = new RecipeModelFactory();
   }
 
+  // タイトル、レシピIDの取得
   public function showUser($user_id)
   {
-    // タイトルの表示
+    // タイトルの検索
     $recipes = $this->modelFactory->createTitleModel()->findUser($user_id);
     if (!empty($recipes))
     {
@@ -36,16 +37,17 @@ class RecipeController
     }
   }
 
+  // レシピで登録されている情報の取得
   public function show($id)
   {
-    // レシピのタイトルを表示
+    // レシピのタイトル
     $recipes = $this->modelFactory->createTitleModel()->findId($id);
     foreach($recipes as $recipe)
     {
       $title = $recipe['title'];
     }
 
-    // 材料と量を表示
+    // 材料と量
     $mate_all = $this->modelFactory->createMateModel()->find($id);
     foreach ($mate_all as $key => $mates)
     {
@@ -54,7 +56,7 @@ class RecipeController
       $gram[] = $mates['gram'];
     }
 
-    // 下準備が登録されていれば表示
+    // 下準備
     $sub_content_all = $this->modelFactory->createSubContentModel()->find($id);
     if (empty($sub_content_all))
     {
@@ -69,7 +71,7 @@ class RecipeController
       }
     }
 
-    // 作り方を表示
+    // 作り方
     $content_all = $this->modelFactory->createContentModel()->find($id);
     foreach ($content_all as $key => $contents)
     {
@@ -77,7 +79,7 @@ class RecipeController
       $content[] = $contents['content'];
     }
 
-    // 料理の写真を表示
+    // 料理の写真
     $images = $this->modelFactory->createImageModel()->find($id);
     if (!empty($images['content']))
     {
@@ -103,6 +105,7 @@ class RecipeController
     return $data;
   }
 
+  // 期間の取得
   public function showWeek($user_id)
   {
     $weeks = $this->modelFactory->createWeekModel()->find($user_id);
@@ -127,6 +130,7 @@ class RecipeController
     }
   }
 
+  // 検索
   public function search($keyword, $user_id)
   {
     if (!empty($keyword))
@@ -154,6 +158,7 @@ class RecipeController
     }
   }
 
+  // レシピの登録
   public function create($title, $user_id, $mates, $contents)
   {
     if (!empty($title))
@@ -187,6 +192,7 @@ class RecipeController
     }
   }
 
+  // 変更の際新しく追加された分の登録
   public function createMateContent($id, $mates, $contents, $user_id)
   {
     // 材料の登録
@@ -214,6 +220,7 @@ class RecipeController
     }
   }
 
+  // 下準備の登録
   public function createSub($sub_contents, $title, $user_id)
   {
     $id = $this->modelFactory->createTitleModel()->find($title, $user_id);
@@ -228,6 +235,7 @@ class RecipeController
     }
   }
 
+  // 変更の際新しく追加された分の登録
   public function createSubContent($id, $sub_contents, $user_id)
   {
     $sub_count = count($sub_contents);
@@ -248,6 +256,7 @@ class RecipeController
     }
   }
 
+  // 期間の登録
   public function createWeek($before, $after, $recipes, $user_id)
   {
     foreach ($recipes as $id)
@@ -256,6 +265,7 @@ class RecipeController
     }
   }
 
+  // 変更処理
   public function edit($id, $title, $mate_all, $content_all, $user_id)
   {
     // タイトルの変更
@@ -276,6 +286,7 @@ class RecipeController
       }
     }
 
+    // 作り方の変更
     foreach ($content_all as $contents)
     {
       $content_count = count($contents['content_id']);
@@ -290,6 +301,7 @@ class RecipeController
     }
   }
 
+  // 下準備の変更
   public function editSub($id, $sub_content_all, $user_id)
   {
     foreach ($sub_content_all as $sub_contents)
@@ -311,6 +323,7 @@ class RecipeController
     }
   }
 
+  // 写真の変更
   public function editImage($name, $type, $content, $size, $id, $user_id)
   {
     $images = $this->modelFactory->createImageModel()->find($id);
@@ -322,6 +335,7 @@ class RecipeController
     }
   }
 
+  // 期間の変更
   public function editWeek($before, $after, $user_id, $recipes_id)
   {
     foreach ($recipes_id as $id)
@@ -330,6 +344,7 @@ class RecipeController
     }
   }
 
+  // 削除
   public function del($id)
   {
     $this->modelFactory->createTitleModel()->del($id);
@@ -339,6 +354,7 @@ class RecipeController
     $this->modelFactory->createImageModel()->del($id);
   }
 
+  // 期間の削除
   public function delWeek($recipes, $user_id)
   {
     foreach ($recipes as $id)
@@ -347,6 +363,7 @@ class RecipeController
     }
   }
 
+  // ユーザーが登録されているレシピの削除
   public function delUser($user_id)
   {
     $this->modelFactory->createTitleModel()->delUser($user_id);

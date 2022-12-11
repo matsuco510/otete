@@ -15,6 +15,7 @@ class UserController
     $this->modelFactory = new UserModelFactory();
   }
 
+  // アイコンの表示
   public function show($id)
   {
     $images = $this->modelFactory->createIconModel()->find($id);
@@ -30,6 +31,7 @@ class UserController
     }
   }
 
+  // ID、ニックネーム、メールアドレスの変更
   public function edit($id, $nickname, $mail)
   {
     $this->modelFactory->createUserModel()->editNickname($id, $nickname);
@@ -37,6 +39,7 @@ class UserController
     $this->modelFactory->createUserModel()->editMail($id, $mail);
   }
 
+  // アイコンの変更
   public function editImage($name, $type, $content, $size, $id)
   {
     $image = $this->modelFactory->createIconModel()->find($id);
@@ -48,6 +51,7 @@ class UserController
     }
   }
 
+  // パスワードの変更
   public function editPassword($id, $password, $new_password, $password_conf)
   {
     $user_password = $this->modelFactory->createUserModel()->find($id);
@@ -66,6 +70,8 @@ class UserController
       }
     }
   }
+
+  // ユーザー情報の登録
   public function create($id, $name, $nickname, $mail, $password)
   {
     // パスワードをハッシュ化
@@ -81,6 +87,7 @@ class UserController
     }
   }
 
+  // アイコンの登録
   public function createImage($name, $type, $content, $size, $id)
   {
     $this->modelFactory->createIconModel()->create($name, $type, $content, $size, $id);
@@ -92,6 +99,7 @@ class UserController
     $this->modelFactory->createIconModel()->del($id);
   }
 
+  // ログイン処理
   public function login($mail, $password)
   {
     if (!empty($mail) && !empty($password))

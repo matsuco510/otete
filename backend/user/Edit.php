@@ -11,19 +11,14 @@ require '../../vendor/autoload.php';
 
 session_start();
 
-if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] !== $_POST['token'])
-{
-  die('不正なリクエストです。処理を中断します。');
-}
-
-unset($_SESSION['token']);
-
+// 変数を定義
 $nickname = $_POST['nickname'];
 $mail = $_POST['email'];
 $password = $_POST['password'];
 $new_password = $_POST['new_password'];
 $password_conf = $_POST['new_password_conf'];
 
+// バリデーションチェック
 $err_msgs = array();
 if (!empty($new_password) && !empty($password_conf))
 {
@@ -36,6 +31,7 @@ if (!empty($new_password) && !empty($password_conf))
   }
 }
 
+// 写真が登録されていれば変数に定義
 if (!empty($_FILES['image']['tmp_name']))
 {
   $name = $_FILES['image']['name'];
@@ -46,6 +42,7 @@ if (!empty($_FILES['image']['tmp_name']))
 
 $u = new UserController();
 
+// どれか入力があれば、それぞれ変更処理をする
 if (isset($content)|| isset($nickname) || isset($mail) || !empty($password) || !empty($new_password) || !empty($password_conf))
 {
   // 画像変更

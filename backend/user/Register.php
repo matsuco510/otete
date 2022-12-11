@@ -9,22 +9,17 @@ require_once 'UserController.php';
 
 session_start();
 
-if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] !== $_POST['token'])
-{
-  die('不正なリクエストです。処理を中断します。');
-}
-
-unset($_SESSION['token']);
-
 $u = new UserController();
 
-$id = $u->escape($_POST['id']);
-$name = $u->escape($_POST['name']);
-$nickname = $u->escape($_POST['nickname']);
-$mail = $u->escape($_POST['mail']);
-$password = $u->escape($_POST['password']);
-$password_conf = $u->escape($_POST['password-conf']);
+// 変数の定義
+$id = $_POST['id'];
+$name = $_POST['name'];
+$nickname = $_POST['nickname'];
+$mail = $_POST['mail'];
+$password = $_POST['password'];
+$password_conf = $_POST['password-conf'];
 
+// バリデーションチェック
 $v = new Validator();
 $v->checkId($id);
 $v->checkName($name);
@@ -33,6 +28,7 @@ $v->checkPassword($password);
 $v->checkPassConf($password_conf);
 $v->checkPassMatch($password, $password_conf);
 
+// 新規登録処理
 if (!empty($id) && !empty($name) && !empty($nickname) && !empty($mail) && !empty($password))
 {
   $u->create($id, $name, $nickname, $mail, $password);

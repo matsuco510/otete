@@ -9,6 +9,7 @@ require_once 'RecipeController.php';
 
 session_start();
 
+// csrf 対策
 if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] !== $_POST['token'])
 {
   die('不正なリクエストです。処理を中断します。');
@@ -17,11 +18,14 @@ if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] 
 unset($_SESSION['token']);
 
 $r = new RecipeController();
+
+// キャンセルをクリックしたらユーザーページに移遷する
 if (isset($_POST['cancel']))
 {
   header('Location: /views/user.php?'.$_SESSION['nickname']);
 }
 
+// 削除ボタンをクリックしたら削除処理をする
 if (isset($_POST['delete']))
 {
   $r->del($_GET['recipe_id']);

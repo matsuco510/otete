@@ -17,6 +17,7 @@ if (!isset($_SESSION['id']))
   header("Location: /views/login.php");
 }
 
+// バリデーションチェック
 if (empty($_POST['before']) || empty($_POST['after']) || empty($_POST['recipe']))
 {
   $v = new Validator();
@@ -25,6 +26,7 @@ if (empty($_POST['before']) || empty($_POST['after']) || empty($_POST['recipe'])
   $v->checkWeekRecipe($_POST['recipe']);
 }
 
+// 入力値を変数に定義
 $before = $_POST['before'];
 $after = $_POST['after'];
 $recipes_id = $_POST['recipe'];  
@@ -32,6 +34,7 @@ $recipes_id = $_POST['recipe'];
 $r = new RecipeController();
 $recipes = $r->showUser($_SESSION['id']);
 
+// 入力値を登録
 if (!empty($before) && !empty($after) && !empty($recipes_id))
 {
   $r->createWeek($before, $after, $recipes_id, $_SESSION['id']);

@@ -12,6 +12,7 @@ require_once '../recipe/RecipeController.php';
 
 session_start();
 
+// 登録情報の削除
 if (!empty($_POST['withdrawal']))
 {
   $r = new RecipeController();

@@ -12,13 +12,16 @@ session_start();
 
 $u = new UserController();
 
-$mail = $u->escape($_POST['mail']);
-$pass = $u->escape($_POST['password']);
+// 変数に定義
+$mail = $_POST['mail'];
+$pass = $_POST['password'];
 
+// バリデーションチェック
 $v = new Validator();
 $v->checkMail($mail);
 $v->checkPassword($pass);
 
+// ログイン処理
 $u->login($mail, $pass);
 ?>
 <!-- login form -->

@@ -17,6 +17,8 @@ unset($_SESSION['token']);
 $r = new RecipeController();
 if (!empty($_POST['title']) && !empty($_POST['mates_id']) && !empty($_POST['mates']) && !empty($_POST['grams']) && !empty($_POST['content_id']) && !empty($_POST['content']))
 {
+
+  // 変数に定義
   $title = $r->escape($_POST['title']);
   $mates_id = $_POST['mates_id'];
   $mates = $_POST['mates'];
@@ -31,6 +33,7 @@ if (!empty($_POST['title']) && !empty($_POST['mates_id']) && !empty($_POST['mate
     'gram' => $grams,
   ]);
 
+  // 下準備のIDがあれば配列に挿入
   if (!empty($_POST['sub_content_id']))
   {
     $sub_content_all[] = [
@@ -39,38 +42,37 @@ if (!empty($_POST['title']) && !empty($_POST['mates_id']) && !empty($_POST['mate
     ];
   }
 
+  // 作り方
   $content_all = array([
     'content_id' => $contents_id,
     'content' => $contents,
   ]);
 
+  // 料理の写真があれば、変数に定義
   if (!empty($_FILES['image']['tmp_name']))
   {
     $name = $_FILES['image']['name'];
     $type = $_FILES['image']['type'];
     $content_img = file_get_contents($_FILES['image']['tmp_name']);
     $size = $_FILES['image']['size'];
-  
-    // 画像を一時的にセッションに保存し、表示する。
-    $_SESSION['image']['content'] = $content_img;
-    $_SESSION['image']['name'] = $name;
   }
   
   // 変更の処理
   $r->edit($_GET['recipe_id'], $title, $mates_all, $content_all, $_SESSION['id']);
 
+  // 下準備の登録
   if (!empty($sub_content_all))
   {
     $r->editSub($_GET['recipe_id'], $sub_content_all, $_SESSION['id']);
   }
 
+  // 料理の写真の登録
   if (!empty($content_img))
   {
     $r->editImage($name, $type, $content_img, $size, $_GET['recipe_id'], $_SESSION['id']);
   }
 } elseif (isset($_POST['cancel'])) {
   header('Location: /views/user.php?'.$_SESSION['nickname']);
-  unset($_SESSION['image']);
 }
 
 // 新しく入力があれば、変数に定義

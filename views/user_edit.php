@@ -49,7 +49,6 @@ $_SESSION['token'] = $token;
     <div class="container">
       <h1 class="card_header">プロフィール変更</h1>
       <form action="../backend/user/Edit.php" method="post" enctype="multipart/form-data" class="form">
-        <input type="hidden" name="token" value="<? print $token; ?>">
         <label for="image">アイコンを変更</label><br>
         <div class="user_icon user_icon_position">
         <? $u->show($_SESSION['id']); ?>

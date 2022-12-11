@@ -11,33 +11,45 @@ require_once 'Validator.php';
 
 session_start();
 
+// 変数に定義
 $before = $_POST['before'];
 $after = $_POST['after'];
 $recipes_id = $_POST['recipe'];
 
-if (!empty($_POST['recipe_in']))
-{
-  $recipes_in = $_POST['recipe_in'];
-}
-
+// バリデーションチェック
 $v = new Validator();
 $v->checkWeekBefore($before);
 $v->checkWeekAfter($after);
 $v->checkWeekRecipe($recipes_id);
 
 $r = new RecipeController();
+
+// ユーザーが登録してる料理を定義
 $recipes = $r->showUser($_SESSION['id']);
+// ユーザーが登録している期間を定義
 $weeks = $r->showWeek($_SESSION['id']);
+
+// チェックから外されているレシピを配列に定義
 if (isset($weeks['recipe_id']))
 {
   $week_del = array_diff($weeks['recipe_id'], $recipes_id);
 }
+
+// 新たにチェックされている料理を定義
+if (!empty($_POST['recipe_in']))
+{
+  $recipes_in = $_POST['recipe_in'];
+}
+
+// それぞれ定義されたものを処理する
 if (!empty($before) && !empty($after) || !empty($recipes_in) || !empty($week_del))
 {
 
+  // チェックから外された料理を削除、または変更
   $r->delWeek($week_del, $_SESSION['id']);
   $r->editWeek($before, $after, $_SESSION['id'], $recipes_id);
 
+  // 新しくチェックされた料理を登録
   if (isset($recipes_in))
   {
     $r->createWeek($before, $after, $recipes_in, $_SESSION['id']);

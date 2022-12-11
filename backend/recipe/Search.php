@@ -15,6 +15,7 @@ if (!isset($_SESSION['id']))
   header("Location: /views/login.php");
 }
 
+// 検索キーワードを変数に定義
 $keyword = $_POST['search'];
 
 $r = new RecipeController();
@@ -56,6 +57,7 @@ $r = new RecipeController();
     </div>
   </form><!-- search -->
   <?
+  // キーワードを検索
   if (!empty($keyword))
   {
     $searches = $r->search($keyword, $_SESSION['id']);

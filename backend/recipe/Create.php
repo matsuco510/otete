@@ -11,6 +11,7 @@ require_once 'Validator.php';
 
 session_start();
 
+// csrf 対策
 if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] !== $_POST['token'])
 {
   header('Location: /views/recipe_insert.php');
@@ -27,9 +28,6 @@ if (!empty($_FILES['image']['tmp_name']))
   $content_img = file_get_contents($_FILES['image']['tmp_name']);
   $size = $_FILES['image']['size'];
 
-  // 画像を一時的にセッションに保存し、表示する。
-  $_SESSION['image']['content'] = $content_img;
-  $_SESSION['image']['name'] = $name;
 }
 
 // 新規登録するレシピを変数に代入
@@ -38,28 +36,33 @@ $mates = $_POST['mate'];
 $grams = $_POST['gram'];
 $contents = array_filter($_POST['content']);
 
+// バリデーションチェック
 $v = new Validator();
 $v->checkTitle($title);
 $v->checkMate($mates);
 $v->checkGram($mates, $grams);
 $v->checkContent($contents);
 
+//　材料と数量に入力があれば配列に定義
 if (!empty($mates) && !empty($grams))
 {
   $mate_all = array_combine($mates, $grams);
 }
 
+// もし、下準備に入力があれば並列に定義
 if (!empty($_POST['sub_content']))
 {
   $sub_contents = array_filter($_POST['sub_content']);
 }
 
+// キャンセルをクリックされたらユーザーページに移遷する
 if (isset($_POST['cancel']))
 {
   header('Location: /views/user.php?'.$_SESSION['nickname']);
   unset($_SESSION['image']);
 }
 
+// それぞれの変数に定義されているものを登録処理
 if (!empty($title) && !empty($mate_all) && !empty($contents) || !empty($sub_contents))
 {
   $r->create($title, $_SESSION['id'], $mate_all, $contents);
