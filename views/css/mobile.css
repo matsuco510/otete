@@ -22,6 +22,11 @@
   #gram {
     width: 90%;
   }
+
+  #trash_btn
+  #trash_cancel_btn {
+    padding: 10px 20px;
+  }
 }
 
 /* ---------- モバイル版 ---------- */

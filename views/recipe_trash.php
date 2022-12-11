@@ -131,8 +131,8 @@ $recipes = $r->show($_GET['recipe_id']);
         </div>
       </div>
       <div class="btn_form">
-        <input type="submit" name="delete" value="削　除" class="trash_btn">
-        <button type="submit" name="cancel" class="trash_cancel_btn">キャンセル</button>
+        <input type="submit" name="delete" value="削　除" class="btn" id="trash_btn" style="background-color: orange;">
+        <button type="submit" name="cancel" class="cancel_btn" id="trash_cancel_btn" style="background-color: white;">キャンセル</button>
       </div>
     </form>
   </div><!--- cooking -->
