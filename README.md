@@ -1,5 +1,8 @@
 # レシピ管理アプリ「おてて」
 ![top image](./views/images/TopImage.png)
+
+## アプリケーション
+→ https://otete-application.herokuapp.com/index.php
 # 1.アプリの概要
 #### レシピの管理、そのレシピの中から献立を決めれるWebアプリケーション
 です。
