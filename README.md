@@ -2,7 +2,7 @@
 ![top image](./views/images/TopImage.png)
 
 ## アプリケーション
-→ https://otete-application.herokuapp.com/index.php
+→ https://otete-application.herokuapp.com/index.php <br>
 heroku cleardbの無料のものを利用しており、接続回数が10回までとなっております。
 登録等で上限を超えた場合、変更や登録が不可になることがございますので、ご了承ください。
 # 1.アプリの概要
