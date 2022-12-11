@@ -11,6 +11,12 @@ require_once 'Validator.php';
 
 session_start();
 
+// キャンセルをクリックされたらユーザーページに移遷する
+if (isset($_POST['cancel']))
+{
+  header('Location: /views/user.php?'.$_SESSION['nickname']);
+}
+
 // 変数に定義
 $before = $_POST['before'];
 $after = $_POST['after'];

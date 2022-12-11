@@ -11,6 +11,12 @@ require '../../vendor/autoload.php';
 
 session_start();
 
+// キャンセルをクリックされたらユーザーページに移遷する
+if (isset($_POST['cancel']))
+{
+  header('Location: /views/user.php?'.$_SESSION['nickname']);
+}
+
 // 変数を定義
 $nickname = $_POST['nickname'];
 $mail = $_POST['email'];

@@ -17,19 +17,16 @@ if (!isset($_SESSION['id']))
   header("Location: /views/login.php");
 }
 
-// バリデーションチェック
-if (empty($_POST['before']) || empty($_POST['after']) || empty($_POST['recipe']))
-{
-  $v = new Validator();
-  $v->checkWeekBefore($_POST['before']);
-  $v->checkWeekAfter($_POST['after']);
-  $v->checkWeekRecipe($_POST['recipe']);
-}
-
 // 入力値を変数に定義
 $before = $_POST['before'];
 $after = $_POST['after'];
 $recipes_id = $_POST['recipe'];  
+
+// バリデーションチェック
+$v = new Validator();
+$v->checkWeekBefore($before);
+$v->checkWeekAfter($after);
+$v->checkWeekRecipe($recipe);
 
 $r = new RecipeController();
 $recipes = $r->showUser($_SESSION['id']);

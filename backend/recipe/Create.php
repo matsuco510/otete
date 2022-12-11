@@ -18,6 +18,13 @@ if (!isset($_SESSION['token']) || !isset($_POST['token']) || $_SESSION['token'] 
 }
 
 unset($_SESSION['token']);
+
+// キャンセルをクリックされたらユーザーページに移遷する
+if (isset($_POST['cancel']))
+{
+  header('Location: /views/user.php?'.$_SESSION['nickname']);
+}
+
 $r = new RecipeController();
 
 // 写真のデータを変数に代入
@@ -53,13 +60,6 @@ if (!empty($mates) && !empty($grams))
 if (!empty($_POST['sub_content']))
 {
   $sub_contents = array_filter($_POST['sub_content']);
-}
-
-// キャンセルをクリックされたらユーザーページに移遷する
-if (isset($_POST['cancel']))
-{
-  header('Location: /views/user.php?'.$_SESSION['nickname']);
-  unset($_SESSION['image']);
 }
 
 // それぞれの変数に定義されているものを登録処理

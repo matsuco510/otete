@@ -65,7 +65,10 @@ $_SESSION['token'] = $token;
         <input type="text" name="new_password" class="form_control"><br>
         <label for="new_password_conf">新しいパスワード(確認)</label><br>
         <input type="text" name="new_password_conf" class="form_control"><br>
-        <input type="submit" class="btn" value="変　更">
+        <div class="btn_form">
+          <input type="submit" value="追　加" class="btn">
+          <button type="submit" name="cancel" class="cancel_btn">キャンセル</button>
+        </div>
       </form>
     </div>
   </div><!-- user change form -->
