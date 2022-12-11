@@ -42,9 +42,9 @@ $u = new UserController();
       <h1 class="card_header">ログイン</h1>
       <form action="../backend/user/Login.php" method="post" class="form">
         <label for="mail">メールアドレス</label><br>
-        <input type="email" name="mail" class="form_control"><br>
+        <input type="email" name="mail" id="mobile_form" class="form_control"><br>
         <label for="password">パスワード</label><br>
-        <input type="password" name="password" class="form_control"><br>
+        <input type="password" name="password" id="mobile_form" class="form_control"><br>
         <input type="submit" class="btn"><br>
       </form>
     </div>

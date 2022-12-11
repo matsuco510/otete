@@ -11,6 +11,11 @@
 
   .form {
     width: 100%;
+    padding:10px 30px 15px;
+  }
+
+  form #mobile_form {
+    width: 200px;
   }
 
   #mate,
@@ -237,6 +242,9 @@
     width: 100%;
   }
 
+  #mobile_form {
+    width: 300px;
+  }
   .form_control {
     width: 95%;
     font-size: 12px;
@@ -340,6 +348,7 @@
   .cooking_header {
     padding: 0 4.5%;
   }
+  
   .cooking_title {
     padding: 0;
     line-height: 55px;

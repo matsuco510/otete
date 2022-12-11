@@ -45,17 +45,17 @@ $_SESSION['token'] = $token;
       <form action="../backend/user/Register.php" method="post" name="register" class="form">
         <input type="hidden" name="token" value="<? print $token;?>">
         <label for="id">ID</label><br>
-        <input type="text" name="id" class="form_control"><br>
+        <input type="text" name="id" class="form_control" id="mobile_form"><br>
         <label for="name">名前</label><br>
-        <input type="text" name="name" class="form_control"><br>
+        <input type="text" name="name" class="form_control" id="mobile_form"><br>
         <label for="nickname">ニックネーム</label> <span>※後で設定できます。</span><br>
-        <input type="text" name="nickname" class="form_control" value="user"><br>
+        <input type="text" name="nickname" class="form_control" id="mobile_form" value="user"><br>
         <label for="mail">メールアドレス</label><br>
-        <input type="mail" name="mail" class="form_control"><br>
+        <input type="mail" name="mail" class="form_control" id="mobile_form"><br>
         <label for="password">パスワード</label><br>
-        <input type="text" name="password" class="form_control"><br>
+        <input type="text" name="password" class="form_control" id="mobile_form"><br>
         <label for="password-conf">パスワード(確認)</label><br>
-        <input type="text" name="password-conf" class="form_control"><br>
+        <input type="text" name="password-conf" class="form_control" id="mobile_form"><br>
         <input type="submit" class="btn" id="btn" name="btn">
       </form>
     </div>
