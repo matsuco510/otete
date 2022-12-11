@@ -1,9 +1,13 @@
 <?
 namespace UserApplication\Models;
+namespace Aws;
 
 use UserApplication\UserController;
+use Aws\S3\S3Client;
+use Aws\CommandPool;
 
 require_once 'UserController.php';
+require '../../vendor/autoload.php';
 
 session_start();
 
@@ -44,21 +48,19 @@ $u = new UserController();
 
 if (isset($content)|| isset($nickname) || isset($mail) || !empty($password) || !empty($new_password) || !empty($password_conf))
 {
+  // 画像変更
   if (isset($content))
   {
   $u->editImage($name, $type, $content, $size, $_SESSION['id']);
   }
+
+  // ニックネームまたはメールアドレスの変更
   $u->edit($_SESSION['id'], $nickname, $mail);
 
+  // パスワードの変更
   if (!empty($password) && !empty($new_password) && !empty($password_conf) && !empty($new_password) === !empty($password_conf))
   {
-    $image = $u->show($_SESSION['id']);
-    if (isset($image['user_id']))
-    {
-      $u->editPassword($_SESSION['id'], $password, $new_password, $password_conf);
-    } else {
-      $u->createIcon($name, $type, $content, $size, $id);
-    }
+    $u->editPassword($_SESSION['id'], $password, $new_password, $password_conf);
   }
   header('Location: /views/user.php?'.$_SESSION['nickname']);
 }
