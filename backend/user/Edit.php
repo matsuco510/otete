@@ -2,12 +2,7 @@
 namespace UserApplication\Models;
 namespace Aws;
 
-use UserApplication\UserController;
-use Aws\S3\S3Client;
-use Aws\CommandPool;
-
 require_once 'UserController.php';
-require '../../vendor/autoload.php';
 
 session_start();
 

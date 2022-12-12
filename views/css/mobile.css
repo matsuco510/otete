@@ -289,16 +289,17 @@
 
   .btn {
     height: 45px;
-    padding: 10px 45px;
+    padding: 10px 30px;
   }
 
   .cancel_btn {
     height: 45px;
-    padding: 10px 30px;
+    padding: 10px 10px;
     line-height: 22px;
+    font-size: 8px;
   }
   .cancel_btn:hover {
-    padding: 9px 29px;
+    padding: 9px 9px;
     line-height: 22px;
   }
 

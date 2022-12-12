@@ -63,12 +63,6 @@ if (!empty($_POST['recipe']))
   <div class="layout">
     <div class="container">
       <h1 class="card_header">調理は済みましたか？</h1>
-      <? if (!empty($v->__invoke()))
-      {?>
-          <div class="err_msgs">
-            <? $v->__invoke(); ?>
-          </div>
-      <? } ?>
       <form action="../backend/recipe/WeekTrash.php" method="post">
         <label for="week">週数</label>
         <div class="week">
@@ -141,8 +135,8 @@ if (!empty($_POST['recipe']))
               </div>
             </div>
            <? } ?>
-          <div class="btn_form">
-            <input type="submit" name="delete" value="O K" class="btn">
+          <div class="btn_form" style="margin-left: 30%;">
+            <input type="submit" name="delete" value="　OK　" class="btn">
             <button type="submit" name="cancel" class="cancel_btn">キャンセル</button>
           </div>
         </div>
