@@ -392,7 +392,7 @@
 
   .cooking_contents {
     width: 100%;
-    margin: 0 4.5%;
+    margin-left: 4.5%;
     padding: 0;
   }
 
@@ -406,6 +406,7 @@
 
   .contents {
     width: 90%;
+    margin: 0;
   }
   .contents h1 {
     font-size: 15px;

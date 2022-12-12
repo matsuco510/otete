@@ -546,7 +546,7 @@ textarea {
 .cooking_header {
   display: flex;
   justify-content: space-between;
-  padding: 0 2% 20px;
+  padding: 0 6% 20px;
   font-size: 20px;
   line-height: 30px;
 }
@@ -622,7 +622,7 @@ textarea {
 }
 
 .cooking_contents {
-  margin: 0 15%;
+  margin-left: 80px;
 }
 .cooking_contents h1 {
   padding: 10px 0;
@@ -646,6 +646,7 @@ textarea {
   padding: 10px 5px;
   border-bottom: 1px solid lightgray;
   font-size: 18px;
+  width: 90%;
 }
 
 /* -------------------- trash -------------------- */
@@ -660,20 +661,6 @@ textarea {
   font-size: 30px;
   text-align: center;
   margin-top: 30px;
-}
-
-.trash_explanation {
-  font-size: 18px;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.trash_exp_icon::before {
-  content: "\e304";
-  font-family: "Font Awesome 5 Free";
-  font-weight: solid;
-  color: black;
-  font-size: 20px;
 }
 
 .trash_btn {
