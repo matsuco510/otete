@@ -1,6 +1,5 @@
 <?
 namespace UserApplication\Models;
-namespace Aws;
 
 require_once 'UserController.php';
 
