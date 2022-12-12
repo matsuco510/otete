@@ -1,6 +1,7 @@
 <?
-namespace UserApplication\Models;
+namespace UserApplication;
 
+use UserApplication\UserController;
 require_once 'UserController.php';
 
 session_start();

@@ -1,6 +1,8 @@
 <?
 namespace RecipeApplication;
 
+use RecipeApplication\RecipeController;
+
 require_once 'RecipeController.php';
 
 session_start();
